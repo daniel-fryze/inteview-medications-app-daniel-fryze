@@ -25,7 +25,7 @@ I have deployed the sample applications to publicly available servers, so that y
 
 1. Client web application:
   * deployed to Heroku server
-    * available at this URL: http://meds-app-daniel-fryze-web.herokuapp.com/
+    * available at this URL: https://meds-app-daniel-fryze-client.herokuapp.com/
 2. Backend REST service:
   * deployed to Heroku server as well (different app) 
     * available at this URL: http://meds-app-daniel-fryze-rest-api.herokuapp.com/medication
