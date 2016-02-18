@@ -59,38 +59,13 @@ public class MedicationControllerIntegrationTest {
 	@Autowired
 	private WebApplicationContext webApplicationContext;
 
-	@Autowired
-    void setConverters(HttpMessageConverter<?>[] converters) {
-
-        this.mappingJackson2HttpMessageConverter = 
-        	Arrays.asList(converters)
-        		.stream()
-        		.filter(hmc -> hmc instanceof MappingJackson2HttpMessageConverter)
-        		.findAny()
-        		.get();
-
-        Assert.assertNotNull("the JSON message converter must not be null",
-            this.mappingJackson2HttpMessageConverter);
-    }
-
     @Before
     public void setup() throws Exception {
-
-        this.mockMvc = webAppContextSetup(webApplicationContext).build();
-        MockitoAnnotations.initMocks(this);
+		// to be constructed
     }
 
     @Test
-    public void readAllMedications() throws Exception {
-
-//    	Mockito
-//    		.when(medicationRepository.findAll())
-//    		.thenReturn(new ArrayList<Medication>());
-
-        mockMvc.perform(get("/medication"))
-        	.andExpect(status().isOk())
-        	.andExpect(content().contentType(contentType))
-        	.andExpect(jsonPath("$", hasSize(0)));
+    public void test() throws Exception {
+		// to be constructed
     }
-
 }

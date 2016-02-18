@@ -38,15 +38,8 @@ public class MedicationControllerUnitTest {
     }
 
     @Test
-    public void readAllMedications() throws Exception {
-
-    	Mockito
-    		.when(medicationRepository.findAll())
-    		.thenReturn(new ArrayList<Medication>());
-
-//        Assert.assertEquals(
-//        	medicationRepository.findAll().size(),
-//        	controller.findAll().size());
+    public void test() throws Exception {
+		// to be constructed
     }
 
 }
