@@ -201,7 +201,7 @@ If anything goes wrong during the process of adding the new entity we get the in
 
 8. Modal notifications - part 2:
 
-![alt tag](https://scontent-vie1-1.xx.fbcdn.net/hphotos-xlp1/t31.0-8/s2048x2048/12719116_10208874799732889_891967589358922207_o.jpg)
+https://scontent-vie1-1.xx.fbcdn.net/hphotos-xaf1/v/t1.0-0/s480x480/1931550_10208876716860816_1818150426661302298_n.jpg?oh=1ff860c260f72ffff1ab3a68953d5ecb&oe=576268D7https://scontent-vie1-1.xx.fbcdn.net/hphotos-xlp1/t31.0-8/s2048x2048/12719116_10208874799732889_891967589358922207_o.jpg)
 
 But of course, not everything always goes wrong. If the operation is successful we alse get the appropriate success message **1**.
 
@@ -210,17 +210,17 @@ But of course, not everything always goes wrong. If the operation is successful 
 
 1. Database diagrams:
 
-There's not a lot to talk about here at the moment :)
-
-?????
+There's a very simple DB schema - just one table, so there's not a lot to talk about here at the moment :)
 
 2. Firebase storage structure:
 
-?????
+Just to have a look:
+
+https://scontent-vie1-1.xx.fbcdn.net/hphotos-xaf1/v/t1.0-0/s480x480/1931550_10208876716860816_1818150426661302298_n.jpg?oh=1ff860c260f72ffff1ab3a68953d5ecb&oe=576268D7https://scontent-vie1-1.xx.fbcdn.net/hphotos-xaf1/v/t1.0-0/s480x480/1931550_10208876716860816_1818150426661302298_n.jpg?oh=1ff860c260f72ffff1ab3a68953d5ecb&oe=576268D7)
 
 ## REST API Overview:
 
-?????
+[under construction]
 
 In case of any other questions, I am open to discussion in any kind and at any time. It's never enough to talk about software.
 Thank you a lot giving me a chance to have some fun with new tools and technologies.
