@@ -42,11 +42,35 @@ Prerequisites:
 
 * All you need is your local machine with any preferable operationg system, connected to the internet, any web browser and Node.js environment installed locally (install guide: https://nodejs.org/en/download/package-manager/).
 
-Steps:
-1. Clone this Git repository to the local environment.
-2. Navivate to the folder named 'web-client' (the one containing i.e. files: 'package.json' and ) which is directly inside the parent directory.
-2. Install all depenun the command
+Steps to follow:
+
+1) Clone this Git repository to the local hard drive.
+
+2) Navivate to the folder named 'meds-app-daniel-fryze-web' (the one containing i.e. files: 'package.json' and 'server.js') which resides inside the project parent git directory  which is directly inside the parent directory.
+
+3) Install all _npm_ dependencies required by the project using the command:
+
 ```
 npm install
 ```
-3. 
+
+4) Install all _bower_ dependencies required by the project using the command:
+```
+bower install
+```
+
+5) Run the build process of the project using the command:
+```
+gulp
+```
+
+6) After these three commands executed successfully, we should see the followin message in the console:
+```
+Server started http://localhost:8888
+```
+
+If it's there, let's open the browser and navigate to this URL.
+
+If everything is OK, we should see the web app.
+
+
