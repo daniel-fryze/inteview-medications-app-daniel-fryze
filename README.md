@@ -28,11 +28,26 @@ Other URLs which can be useful for testing:
 2. Access to database deployed to Amazon RDS:
   * (host: us-cdbr-iron-east-03.cleardb.net, port: 3306, user: bd513f1f4c0069, password: 0da13f37)
 
+
+## A quick look at what the components and how communicate with each other:
+
 The general testing environments architecture looks as follows:
 
-?????
+![alt tag](https://scontent-vie1-1.xx.fbcdn.net/hphotos-xtl1/t31.0-8/12747377_10208875028578610_8906946411802289448_o.jpg)
 
-## How to quickly run the app locally:
+However I hope we will have a chance to deep into thise topics more during direct talk. 
+
+
+## An even quicker look at the tools I have used to implement this 'proof-of-concept' app:
+
+It looks as on the picture below:
+
+![alt tag](https://scontent-vie1-1.xx.fbcdn.net/hphotos-xpf1/t31.0-8/10265506_10208875028538609_6472442415265422439_o.jpg)
+
+Here I hope even more to talk to you about it deeply. 
+
+
+## Let's have a look how to run the application locally after pulling from Git:
 
 In order to run the app locally we need to do the following steps:
 
@@ -117,7 +132,7 @@ http://localhost:9200/medication?namePattern=a?partialSearch=true
 I you see the following content (not any error), it means that the REST API is deployed successfully. Otherwise something must have gone wrong.
 
 
-# A short tutorial:
+## A short tutorial on how to use the app in general:
 
 1. Dashboard screen:
 
@@ -166,3 +181,28 @@ If anything goes wrong during the process of adding the new entity we get the in
 ![alt tag](https://scontent-vie1-1.xx.fbcdn.net/hphotos-xlp1/t31.0-8/s2048x2048/12719116_10208874799732889_891967589358922207_o.jpg)
 
 But of course, not everything always goes wrong. If the operation is successful we alse get the appropriate success message **1**.
+
+
+## A quick look at our storages:
+
+1. Database diagrams:
+
+There's not a lot to talk about here at the moment :)
+
+2. Firebase storage structure:
+
+
+## REST API Overview:
+
+a
+a
+a
+a
+
+In case of any other questions, I am open to discussion in any kind and at any time. It's never enough to talk about software.
+
+Thank you a lot giving me a chance to have some fun with new tools and technologies.
+
+Looking forward to hear from you.
+
+Daniel.
