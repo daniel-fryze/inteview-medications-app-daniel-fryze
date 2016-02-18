@@ -1,8 +1,8 @@
-// gulp
+// GULP INIT
 
 var gulp = require('gulp');
 
-// plugins
+// PLUGINS LOAD
 
 var connect = require('gulp-connect');
 var connect = require('gulp-connect');
@@ -12,7 +12,7 @@ var minifyCSS = require('gulp-minify-css');
 var clean = require('gulp-clean');
 var runSequence = require('run-sequence');
 
-// tasks
+// TASKS DEFINITIONS
 
 gulp.task('lint', function() {
   gulp.src(['./app/**/*.js', '!./app/bower_components/**'])
@@ -36,8 +36,6 @@ gulp.task('minify-css', function() {
 gulp.task('minify-js', function() {
   gulp.src(['./app/**/*.js', '!./app/bower_components/**'])
     .pipe(uglify({
-      // inSourceMap:
-      // outSourceMap: "app.js.map"
     }))
     .pipe(gulp.dest('./dist/'))
 });
@@ -66,10 +64,13 @@ gulp.task('connectDist', function () {
   });
 });
 
-// default task
+// DEFAULT TASK
+
 gulp.task('default',
   ['lint', 'connect']
 );
+
+// DEFAULT BUILD TASK
 
 gulp.task('build', function() {
   runSequence(

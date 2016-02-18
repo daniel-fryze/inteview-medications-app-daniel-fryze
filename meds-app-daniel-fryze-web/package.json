@@ -1,7 +1,7 @@
 {
-  "name": "new-angular-app",
+  "name": "inteview-medications-app-daniel-fryze-web-client",
   "version": "1.0.0",
-  "description": "New angular app",
+  "description": "Medications book app (web client) - an interview from candidate: Daniel Fryze",
   "main" : "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

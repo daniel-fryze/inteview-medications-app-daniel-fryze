@@ -1,6 +1,6 @@
 {
-  "name": "echo-application-daniel-fryze-app",
-  "description": "Echo application app by applicant Daniel Fryze",
+  "name": "inteview-medications-app-daniel-fryze-web-client",
+  "description": "Medications book app (web client) - an interview from candidate: Daniel Fryze",
   "main": "gulpfile.js",
   "authors": [
     "Daniel Fryze"

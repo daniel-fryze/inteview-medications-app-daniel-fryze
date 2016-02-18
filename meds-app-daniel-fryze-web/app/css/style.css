@@ -1,14 +1,8 @@
-div#page-wrapper {
+#page-wrapper {
 	width: 80%;
 	margin-left: 10%;
 	margin-right: 10%;
 	margin-top: 70px;
-}
-
-.page-header {
-	border: 0px !important;
-	margin-top: 5px !important;
-	margin-bottom: 5px !important;
 }
 
 .headerName {
@@ -16,11 +10,11 @@ div#page-wrapper {
 	border-bottom: 1px solid #DDD;
 }
 
-div.alert {
+.panel .panel-body .alert {
 	padding: 10px !important;
 }
 
-div.panel-body {
+.panel-body {
 	padding-top: 20px !important;
 	padding-bottom: 20px !important;
 	padding-left: 25px !important;
@@ -86,7 +80,7 @@ div.panel-body {
 .listDetail {
 	float: right;
 	font-size: 10px;
-	margin-top: 5px;
+	margin-top: 4px;
 }
 
 .selectedMainTab {
@@ -176,7 +170,6 @@ div.panel-body {
 }
 
 .alert {
-	padding: 0px !important;
 	margin-bottom: 0px !important;
 }
 
