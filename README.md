@@ -98,7 +98,7 @@ mvn clean package install -DskipTests=true
 mvn spring-boot: run -Dprofiles=dev-mock
 ```
 
-To run the application in _dev_ mode but connected to local MySQL database + test Firebase account run the alternative command:
+To run the application in _dev_ mode but connected to local MySQL database + test Firebase account run the alternative command (however in this case to make it work, you need to configure and run local MySQL database as well):
 ```
 mvn spring-boot: run -Dprofiles=dev-integration
 ```
@@ -107,3 +107,11 @@ If everything goes ok, you should see among the logs the following message:
 ```
 Tomcat started on port(s): 9200 (http)
 ```
+
+If so, you can open the web browser and navigate to the following URL:
+http://localhost:9200/medication?namePattern=a?partialSearch=true
+```
+[]
+```
+
+I you see the following content (not any error), it means that the REST API is deployed successfully. Otherwise something must have gone wrong.
