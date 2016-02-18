@@ -6,6 +6,7 @@ That's why I have created also this short 'how-to' document to make it easy for 
 
 So let's start.
 
+
 ## Available testing environments
 
 I have deployed the sample applications to publicly available servers, so that you can quickly run the app without the need to rebuild it and install on local environments. They are available at the following URLs:
@@ -22,10 +23,14 @@ I have deployed the sample applications to publicly available servers, so that y
 
 Other URLs which can be useful for testing:
 
-  1 Access to Firebase store service at: https://meds-app-daniel-fryze-firebase-database.firebaseio.com
-    * (login: temporary.mate@gmail.com, password: nothingtoadd7)
-  2 Access to database deployed to Amazon RDS:
-    * (host: us-cdbr-iron-east-03.cleardb.net, port: 3306, user: bd513f1f4c0069, password: 0da13f37)
+1. Access to Firebase store service at: https://meds-app-daniel-fryze-firebase-database.firebaseio.com
+  * (login: temporary.mate@gmail.com, password: nothingtoadd7)
+2. Access to database deployed to Amazon RDS:
+  * (host: us-cdbr-iron-east-03.cleardb.net, port: 3306, user: bd513f1f4c0069, password: 0da13f37)
+
+The general testing environments architecture looks as follows:
+
+?????
 
 ## How to quickly run the app locally:
 
