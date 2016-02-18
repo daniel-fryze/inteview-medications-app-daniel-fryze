@@ -21,8 +21,11 @@ I have deployed the sample applications to publicly available servers, so that y
 (none of the above has any security attached, so that you don't need any special credentials to log in)
 
 Other URLs which can be useful for testing:
-  * access to Firebase store service at: https://temporarymateapp.firebaseio.com/
-    * (login: *****, password: *****)
+
+  1 Access to Firebase store service at: https://meds-app-daniel-fryze-firebase-database.firebaseio.com
+    * (login: temporary.mate@gmail.com, password: nothingtoadd7)
+  2 Access to database deployed to Amazon RDS:
+    * (host: us-cdbr-iron-east-03.cleardb.net, port: 3306, user: bd513f1f4c0069, password: 0da13f37)
 
 ## How to quickly run the app locally:
 
