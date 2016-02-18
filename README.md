@@ -12,10 +12,10 @@ I have deployed the sample applications to publicly available servers, so that y
 
 1. Client web application:
   * deployed to Heroku
-    * available at URL: https://inteview-meds-app-daniel-fryze.herokuapp.com
+    * available at URL: http://meds-app-daniel-fryze-web.herokuapp.com
 2. Backend REST service:
   * deployed to AWS
-    * available at URL: https://hidden-hamlet-69927.herokuapp.com 
+    * available at URL: http://meds-app-daniel-fryze-rest-api.herokuapp.com/medication
     * (detailed description on how to use the API in next sections)
 
 (none of the above has any security attached, so that you don't need any special credentials to log in)
