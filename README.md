@@ -115,3 +115,18 @@ http://localhost:9200/medication?namePattern=a?partialSearch=true
 ```
 
 I you see the following content (not any error), it means that the REST API is deployed successfully. Otherwise something must have gone wrong.
+
+
+# A short tutorial:
+
+1. Dashboard screen:
+
+![alt tag](http://postimg.org/image/b8706n6bt/)
+
+This screen is used to trace in real time the statistics on data stored in Firebase. The data in section **1** are the total counters of reads in the Firebase database. They are bound using three-way binding so that any change in Firebase is immediately reflected on the form. The same applies to sections **2** and **3** where the whole array is bounded to the model in Firebase, so that not only changes to data are reflected but also if a new data appears (for examples, many reads for a particular medication), the statistics are automatically updated on the screen without reload need.
+
+2. Search screen:
+
+![alt tag](http://postimg.org/image/b8706n6bt/)
+
+aaa
