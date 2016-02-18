@@ -142,6 +142,18 @@ http://localhost:9200/medication?namePattern=a?partialSearch=true
 
 I you see the following content (not any error), it means that the REST API is deployed successfully. Otherwise something must have gone wrong.
 
+To run all the **unit tests** (using mocked DB repositories + mocked firebase service) for the application run the following command:
+```
+mvn test -P unit-tests
+```
+
+To run all the *integration tests** (using real local database MySQL + real Firebase service with testing storage) run the command:
+```
+mvn test -P integration-tests
+```
+
+I have implemented only sample unit and integration tests. Implementing all is beyond the scope of this 'proof-of-concept'.
+
 
 ## A short tutorial on how to use the app in general:
 
