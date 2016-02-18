@@ -11,7 +11,7 @@
 	</parent>
 
 	<groupId>edu.danielfryze.recrutation.echo</groupId>
-	<artifactId>rest-backend-application</artifactId>
+	<artifactId>meds-app-daniel-fryze-rest-api</artifactId>
 	<version>0.0.1</version>
 	<packaging>pom</packaging>
 
