@@ -1,0 +1,159 @@
+<div ng-controller="MedicationsSearchController">
+	<div class="col-lg-12 headerName">
+		<h3 class="page-header">Medications search engine</h3>
+	</div>
+	<div class="row">
+		<div class="col-lg-12">
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<span>Search query</span>
+                </div>
+				<div class="panel-body">
+					<div class="form-group">
+						<form name="searchForm" novalidate="novalidate" ng-submit="search();" ng-submit-force="true">
+							<div style="float:left; width:70%">
+								<input class="form-control" style="height: 34px; float:left; width:100%" type="text" ng-model="searchKey" class="form-control" placeholder="Enter medication name ..." required disable-validation-message=" "/>
+							</div>
+							<div>
+                            <button class="btn btn-default btn-search" type="submit" style="float:left" ng-disabled="searchForm.$invalid">
+								Search
+                            </button>
+                            <button class="btn btn-default btn-search" type="button" ng-click="clearAll()" style="float:left">
+								Clear all
+                            </button>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-lg-6">
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<span>Search results for query pattern:</span>
+					<span class="searchDetails"><em>{{recentSearchKey}}</em></span>
+				</div>
+				<div class="panel-body">
+					<div class="alert alert-warning" ng-hide="searchMethodInvoked">
+						<span>To see the search results click the search button above.</span>
+					</div>
+					<div ng-show="searchMethodInvoked">
+						<div class="alert alert-danger" ng-hide="searchResultsExist">
+							<span>We are sorry, but no results were found for your query.</span>
+							<br/>
+							<span>Please change your search criteria and try again.</span>
+						</div>
+						<div ng-show="searchResultsExist">
+							<div class="list-group">
+								<a ng-repeat="result in searchResults" ng-click="findDetails(result[0])" ng-class="{'list-group-item list-group-item-chosen': (chosenMedId === result[0]), 'list-group-item': (chosenMedId !== result[0])}">
+									<span>{{result[1]}}</span>
+									<span ng-if="result[2]" class="listDetail"><em>Producer: {{result[2]}}</em></span>
+									<span ng-if="!result[2]" class="listDetail"><em>Producer: unknown</em></span>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-lg-6">
+			<div class="panel panel-default">
+                <div class="panel-heading">
+					<span>Medication details for medication name:</span>
+					<span class="searchDetails"><em>{{findResult.name}}</em></span>
+                </div>
+                <div class="panel-body">
+					<div class="alert alert-warning" ng-hide="findMethodInvoked">
+						<span>To see the medication details, select one of the searched items from the panel with search results on the left.</span>
+                    </div>
+					<div ng-show="findMethodInvoked">
+						<div class="alert alert-danger" ng-hide="findResultExists">
+							<span>We are sorry, but no details were found for your selection.</span>
+							<br/>
+							<span>Please change your selection and try again.</span>
+						</div>
+						<div ng-show="findResultExists">
+							<ul class="nav nav-tabs">
+								<li class="active">
+									<a data-target="#info" data-toggle="tab" ng-click="selectTab('info')" ng-class="{'selected-details-tab': (selectedDetailsTab === 'info')}">Info</a>
+								</li>
+								<li>
+									<a data-target="#description" data-toggle="tab" ng-click="selectTab('description')" ng-class="{'selected-details-tab': (selectedDetailsTab === 'description')}">Description</a>
+								</li>
+								<li>
+									<a data-target="#dosage" data-toggle="tab" ng-click="selectTab('dosage')" ng-class="{'selected-details-tab': (selectedDetailsTab === 'dosage')}">Dosage</a>
+								</li>
+								<li>
+									<a data-target="#interactions" data-toggle="tab" ng-click="selectTab('interactions')" ng-class="{'selected-details-tab': (selectedDetailsTab === 'interactions')}">Interactions</a>
+								</li>
+							</ul>
+							<div class="tab-content find-details">
+								<div class="tab-pane fade in active" id="info">
+									<h4>Medication details</h4>
+									<div class="list-group no-margin-bottom">
+										<a class="list-group-item">
+											<span>Name</span>
+											<span class="pull-right text-muted small">
+												<em ng-if="findResult.name">{{findResult.name}}</em>
+												<em ng-if="!findResult.name">-</em>
+											</span>
+										</a>
+										<a class="list-group-item">
+											<span>Generic name</span>
+											<span class="pull-right text-muted small">
+												<em ng-if="findResult.genericName">{{findResult.genericName}}</em>
+												<em ng-if="!findResult.genericName">-</em>
+											</span>
+										</a>
+										<a class="list-group-item">
+											<span>Date added</span>
+											<span class="pull-right text-muted small">
+												<em ng-if="findResult.creationDate">{{findResult.creationDate}}</em>
+												<em ng-if="!findResult.creationDate">-</em>
+											</span>
+										</a>
+										<a class="list-group-item">
+											<span>Producer</span>
+											<span class="pull-right text-muted small">
+												<em ng-if="findResult.producerName">{{findResult.producerName}}</em>
+												<em ng-if="!findResult.producerName">-</em>
+											</span>
+										</a>
+										<a class="list-group-item">
+											<span>Database requests count</span>
+											<span class="pull-right text-muted small">
+												<em>{{requestsCount.counter}}</em>
+											</span>
+										</a>
+									</div>
+								</div>
+								<div class="tab-pane fade" id="description">
+									<h4>Medication detailed description</h4>
+									<p ng-if="findResult.description">{{findResult.description}}</p>
+									<p ng-if="!findResult.description" class="data-unavailable">Data unavailable</p>
+								</div>
+								<div class="tab-pane fade" id="dosage">
+									<h4>Suggested optimal dosage</h4>
+									<p ng-if="findResult.dosage">{{findResult.dosage}}</p>
+									<p ng-if="!findResult.dosage" class="data-unavailable">Data unavailable</p>
+								</div>
+								<div class="tab-pane fade" id="interactions">
+									<h4>Possible dangerous interactions</h4>
+									<p ng-if="findResult.interactions">{{findResult.interactions}}</p>
+									<p ng-if="!findResult.interactions" class="data-unavailable">Data unavailable</p>
+								</div>
+							</div>
+							<div class="button-container">
+								<button class="btn btn-default btn-refresh" type="button" ng-click="refreshFind()" style="float:left">
+									Refresh data
+								</button>
+							</div>
+						</div>
+					</div>
+				</div>
+        `	</div>
+		</div>
+	</div>
+</div>

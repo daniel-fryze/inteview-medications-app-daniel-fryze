@@ -1,0 +1,193 @@
+div#page-wrapper {
+	width: 80%;
+	margin-left: 10%;
+	margin-right: 10%;
+	margin-top: 70px;
+}
+
+.page-header {
+	border: 0px !important;
+	margin-top: 5px !important;
+	margin-bottom: 5px !important;
+}
+
+.headerName {
+	margin-bottom: 20px;
+	border-bottom: 1px solid #DDD;
+}
+
+div.alert {
+	padding: 10px !important;
+}
+
+div.panel-body {
+	padding-top: 20px !important;
+	padding-bottom: 20px !important;
+	padding-left: 25px !important;
+	padding-right: 25px !important;
+}
+
+.nav-tabs li a {
+	color: #000 !important;
+}
+
+.tab-content {
+	padding-top: 5px !important;
+}
+
+.tab-content h4 {
+	margin-top: 15px;
+	margin-bottom: 15px;
+	margin-left: 20px;
+}
+
+.nav-tabs > li > a {
+	border-color: #ddd !important;
+}
+
+.panel-body-search {
+	padding-top: 40px !important;
+	padding-bottom: 40px !important;
+}
+
+.form-group label {
+	margin-left: 10px; 
+}
+
+.form-group {
+    margin-bottom: 10px !important;
+}
+
+.form-group label {
+	width: 100px;
+	margin-bottom: 4px;
+	font-weight: normal;
+}
+
+.form-group input {
+	height: 30px;
+}
+
+.form-group select {
+	height: 30px;
+	width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.huge {
+	font-size: 40px;
+}
+
+.list-group-item  {
+	height: 40px;
+}
+
+.listDetail {
+	float: right;
+	font-size: 10px;
+	margin-top: 5px;
+}
+
+.selectedMainTab {
+	color: #FFF !important;
+}
+
+.find-details .list-group-item {
+	cursor: auto;
+}
+
+.help-block {
+	display: none !important;
+}
+
+.find-details a.list-group-item:hover {
+	background-color: #FFF;
+}
+
+.searchDetails {
+	float: right;
+	font-size: 12px;
+	margin-top: 3px;
+}
+
+.list-group a {
+	cursor: pointer;
+}
+
+.nav-tabs a {
+	cursor: pointer;
+}
+
+.list-group-item-chosen, .selected-details-tab {
+	background-color: #EEE !important;
+}
+
+.list-group-item-chosen {
+	cursor: auto !important;
+}
+
+.data-unavailable {
+	text-align: center;
+	font-style: italic;
+}
+
+.no-margin-bottom {
+	margin-bottom: 0px !important;
+}
+
+.button-container {
+	border-top: 1px solid #DDD;
+	margin-top: 20px;
+	padding-top: 20px;
+	float: left;
+	width: 100%;
+}
+
+.btn {
+	background-color: #EEE !important;
+}
+
+.btn:hover {
+	background-color: #CCC !important;
+}
+
+.btn-search {
+	margin-left: 15px;
+}
+
+.btn-refresh {
+	margin-left: 30%;
+	margin-right: 30%;
+	width: 40%;
+}
+
+.btn-add {
+	margin-top: 0px;
+	margin-bottom: 0px;
+	float: right;
+	margin-right: 15px;
+}
+
+.page-wrapper {
+	margin-left: 10% !important;
+	margin-right: 10% !important;
+	width: 80% !important;
+}
+
+.alert {
+	padding: 0px !important;
+	margin-bottom: 0px !important;
+}
+
+.modal-header-success {
+	border-radius-top-right: 6px !important;
+	background-color: #dff0d8 !important;
+	color: #3c763d;
+}
+
+.modal-header-failure {
+	border-radius: 6px !important;
+	background-color: #f2dede;
+	color: #a94442;
+}

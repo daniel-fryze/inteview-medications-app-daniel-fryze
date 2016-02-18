@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+
+<html ng-app="MedicationsDatabaseApp">
+
+<head>
+
+    <meta charset="utf-8">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="An application to Echo company from Daniel Fryze">
+    <meta name="author" content="Daniel Fryze">
+
+    <title>Medications Book - REST App - application from: Daniel Fryze</title>
+
+	<!-- STYLES - BOWER -->
+    <link rel="stylesheet" href="./bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./bower_components/font-awesome/css/font-awesome.min.css">
+	<link rel="stylesheet" href="./bower_components/bootstrap/dist/css/bootstrap.css"/>
+	<link rel="stylesheet" href="./bower_components/animate.css/animate.css"/>
+
+	<!-- STYLES - OWN -->
+	<link rel="stylesheet" href="./css/style.css">
+	<link rel="stylesheet" href="./css/modern-business.css"/>
+
+	<!-- SCRIPTS - BOWER -->
+	<script src="./bower_components/jquery/dist/jquery.js"></script>
+	<script src="./bower_components/angular/angular.js"></script>
+	<script src="./bower_components/angular-route/angular-route.js"></script>
+	<script src="./bower_components/angular-animate/angular-animate.js"></script>
+	<script src="./bower_components/bootstrap/dist/js/bootstrap.js"></script>
+	<script src="./bower_components/angular-resource/angular-resource.js"></script>
+	<script src="./bower_components/angular-auto-validate/dist/jcs-auto-validate.min.js"></script>
+	<script src="./bower_components/firebase/firebase.js"></script>
+	<script src="./bower_components/angularfire/dist/angularfire.js"></script>
+	<script src="./bower_components/restangular/dist/restangular.js"></script>
+	<script src="./bower_components/underscore/underscore.js"></script>
+
+</head>
+
+<body>
+
+    <div id="wrapper">
+
+		<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+			<div class="container">
+				<div class="navbar-header">
+					<a class="navbar-brand" href="#dashboard">Medications Book - REST App - application from: Daniel Fryze</a>
+				</div>
+				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+					<ul class="nav navbar-nav navbar-right">
+						<li>
+							<a href="#dashboard" ng-class="{'selectedMainTab': (selectedMainTab === 'dashboard')}">Dashboard</a>
+						</li>
+						<li>
+							<a href="#search" ng-class="{'selectedMainTab': (selectedMainTab === 'search')}">Search engine</a>
+						</li>
+						<li>
+							<a href="#add" ng-class="{'selectedMainTab': (selectedMainTab === 'add')}">Add new medication</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+
+        <div id="page-wrapper">
+			<div ng-view></div>
+        </div>
+
+    </div>
+
+    <script src="./bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="./bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="./bower_components/metisMenu/dist/metisMenu.min.js"></script>
+    <script src="./bower_components/raphael/raphael-min.js"></script>
+    <script src="./bower_components/morrisjs/morris.min.js"></script>
+
+	<script src="./js/main.js"></script>
+	<script src="./js/controllers.js"></script>
+	<script src="./js/services.js"></script>
+
+	<div class="modal fade" id="modalConfirmationSuccess" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+	  <div class="modal-dialog" role="document">
+		<div class="modal-content">
+		  <div class="modal-header modal-header-success">
+			<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+			<h4 class="modal-title" id="myModalLabel">Operation successful</h4>
+		  </div>
+		  <div class="modal-body">
+			A new medication has been added to database.
+			You can now search it via search engine.
+		  </div>
+		  <div class="modal-footer">
+			<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+		  </div>
+		</div>
+	  </div>
+	</div>
+
+	<div class="modal fade" id="modalConfirmationFailure" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+	  <div class="modal-dialog" role="document">
+		<div class="modal-content">
+		  <div class="modal-header modal-header-failure">
+			<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+			<h4 class="modal-title" id="myModalLabel">Operation failed</h4>
+		  </div>
+		  <div class="modal-body">
+			Description man: <span id="failureReason"></span>
+		  </div>
+		  <div class="modal-footer">
+			<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+		  </div>
+		</div>
+	  </div>
+	</div>
+
+</body>
+
+</html>

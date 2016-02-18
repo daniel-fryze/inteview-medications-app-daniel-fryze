@@ -1,0 +1,98 @@
+<div ng-controller="DashboardController">
+	<div class="col-lg-12 headerName">
+		<h3 class="page-header">Medications dashboard</h3>
+	</div>
+	<div class="row">
+		<div class="col-lg-4 col-md-6">
+			<div class="panel panel-primary">
+				<div class="panel-heading">
+					<div class="row">
+						<div class="col-xs-3">
+							<i class="fa fa-tasks fa-5x"></i>
+						</div>
+						<div class="col-xs-9 text-right">
+							<div class="huge">{{totalReads.totalcount}}</div>
+							<div>Total reads</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-lg-4 col-md-6">
+			<div class="panel panel-primary" style="background-color: #5cb85c; border-color: #5cb85c">
+				<div class="panel-heading" style="background-color: #5cb85c; border-color: #5cb85c">
+					<div class="row">
+						<div class="col-xs-3">
+							<i class="fa fa-tasks fa-5x"></i>
+						</div>
+						<div class="col-xs-9 text-right">
+							<div class="huge">{{totalReads.totalcount}}</div>
+							<div>Total reads</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-lg-4 col-md-6">
+			<div class="panel panel-primary" style="background-color: #f0ad4e; border-color: #f0ad4e">
+				<div class="panel-heading" style="background-color: #f0ad4e; border-color: #f0ad4e">
+					<div class="row">
+						<div class="col-xs-3">
+							<i class="fa fa-tasks fa-5x"></i>
+						</div>
+						<div class="col-xs-9 text-right">
+							<div class="huge">{{totalReads.totalcount}}</div>
+							<div>Total reads</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-lg-6 col-md-6">
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<span>5 recently requested items:</span>
+				</div>
+				<div class="panel-body">
+					<div>
+						<div>
+							<div class="list-group find-details">
+								<a class="list-group-item" ng-repeat="dataRead in recentDataReads">
+									<span>{{dataRead.$id}}</span>
+									<span class="pull-right text-muted small" style="margin-top: 2px">
+										<em ng-if="dataRead.updateDate">{{dataRead.updateDate}}</em>
+										<em ng-if="!dataRead.updateDate">-</em>
+									</span>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-lg-6 col-md-6">
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<span>5 most frequently requested items:</span>
+				</div>
+				<div class="panel-body">
+					<div>
+						<div>
+							<div class="list-group find-details">
+								<a class="list-group-item" ng-repeat="dataRead in mostFrequentDataReads">
+									<span>{{dataRead.$id}}</span>
+									<span class="pull-right text-muted small" style="margin-top: 2px">
+										<em ng-if="dataRead.updateDate">{{dataRead.counter}}</em>
+										<em ng-if="!dataRead.updateDate">-</em>
+									</span>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
