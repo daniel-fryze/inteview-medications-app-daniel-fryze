@@ -117,17 +117,16 @@ Steps to follow:
 ```
 mvn clean package install -DskipTests=true
 ```
-
 (running unit tests and integration tests will be described in detail in the following sections)
 
-3) Run the application (initially in local version: using in-memory db and mock firebase) using the following command:
+3) Navigate one level lower to the folder named 'rest-api'. Run the application (initially in local version: using in-memory database) using the following command:
 ```
-mvn spring-boot: run -Dprofiles=dev-mock
+mvn spring-boot:run -Dprofiles=devMock
 ```
 
-To run the application in _dev_ mode but connected to local MySQL database + test Firebase account run the alternative command (however in this case to make it work, you need to configure and run local MySQL database as well):
+To run the application in still _dev_ mode but _connected to local MySQL database_. run the alternative command (however in this case to make it work, you need to configure and run local MySQL database as well (the configuration for all possible database server: Local, Amazon RDS, Embedded H2 are defined in file 'application.properties' and commnted, so you can uncomment it when needed + check if the Firebase account in file 'app.properties' is valid and working: initially it's a testing account: https://temporarymateapp.firebaseio.com/):
 ```
-mvn spring-boot: run -Dprofiles=dev-integration
+mvn spring-boot:run -Dprofiles=devIntegration
 ```
 
 If everything goes ok, you should see among the logs the following message:
@@ -142,6 +141,18 @@ http://localhost:9200/medication?namePattern=a?partialSearch=true
 ```
 
 I you see the following content (not any error), it means that the REST API is deployed successfully. Otherwise something must have gone wrong.
+
+To run all the **unit tests** (using mocked DB repositories + mocked firebase service) for the application run the following command:
+```
+mvn test -P unit-tests
+```
+
+To run all the *integration tests** (using real local database MySQL + real Firebase service with testing storage) run the command:
+```
+mvn test -P integration-tests
+```
+
+I have implemented only sample unit and integration tests. Implementing all is beyond the scope of this 'proof-of-concept'.
 
 
 ## A short tutorial on how to use the app in general:
@@ -201,15 +212,15 @@ But of course, not everything always goes wrong. If the operation is successful 
 
 There's not a lot to talk about here at the moment :)
 
+?????
+
 2. Firebase storage structure:
 
+?????
 
 ## REST API Overview:
 
-a
-a
-a
-a
+?????
 
 In case of any other questions, I am open to discussion in any kind and at any time. It's never enough to talk about software.
 Thank you a lot giving me a chance to have some fun with new tools and technologies.
