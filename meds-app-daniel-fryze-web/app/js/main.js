@@ -15,10 +15,14 @@
 		])
 
 	// defining constants used across the application
-	.constant('FIREBASE_STORE_BASE_URL', 'https://meds-app-daniel-fryze-firebase-database.firebaseio.com/')
+	// URL to Heroku Rest API deployed
+	.constant('REST_API_APP_URL', 'https://meds-app-daniel-fryze-rest-api.herokuapp.com')
+	// URL to local machine Rest API deployed
+	.constant('REST_API_APP_URL', 'http://localhost:9200/')
 	.constant('FIREBASE_STORE_COUNTERS_PATH', 'medication_reads/counters/')
 	.constant('FIREBASE_STORE_COUNTERS_SUMS_PATH', 'medication_reads/counters_sums/')
 	.constant('REST_API_APP_URL', 'https://meds-app-daniel-fryze-rest-api.herokuapp.com')
+	.constant('FIREBASE_STORE_BASE_URL', 'https://meds-app-daniel-fryze-firebase-database.firebaseio.com/')
 
 	// configuring navigation (routes provider) for the whole application
 	.config([
