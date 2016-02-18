@@ -61,7 +61,7 @@ angular.module('MedicationsDatabaseApp.Controllers', [])
 						}
 
 						$scope.findMethodInvoked = true;
-						var firebaseRef = new Firebase("https://temporarymateapp.firebaseio.com/medication_reads/counters/" + $scope.findResult.name);
+						var firebaseRef = new Firebase("https://meds-app-daniel-fryze-firebase-database.firebaseio.com/medication_reads/counters/" + $scope.findResult.name);
 
 						firebaseRef.on("value", function(snapshot) {
 							$timeout(function() {
@@ -136,8 +136,8 @@ angular.module('MedicationsDatabaseApp.Controllers', [])
 
 		$rootScope.selectedMainTab = "dashboard";
 
-		var firebaseRefSingle = new Firebase("https://temporarymateapp.firebaseio.com/medication_reads/counters");
-		var firebaseRefTotals = new Firebase("https://temporarymateapp.firebaseio.com/medication_reads/counters_sums");
+		var firebaseRefSingle = new Firebase("https://meds-app-daniel-fryze-firebase-database.firebaseio.com/medication_reads/counters");
+		var firebaseRefTotals = new Firebase("https://meds-app-daniel-fryze-firebase-database.firebaseio.com/medication_reads/counters_sums");
 		var queryRecentDataReads = firebaseRefSingle.orderByChild("updateDateTimestampReverse").limitToFirst(5);
 		var queryAllReads = firebaseRefSingle;		
 		var queryMostOftenDataReads = firebaseRefSingle.orderByChild("counterReverse").limitToFirst(5);
