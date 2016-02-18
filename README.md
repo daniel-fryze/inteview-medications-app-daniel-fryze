@@ -1,8 +1,8 @@
 # Medications Book - an interview app (how-to)
 
-Hi. I have created thiw sample app generally for the purpose of the recruitment process. However I had a great fun doint it and I hope you will enjoy verifying it as well.
+Hi. I have created this sample app, generally for the purpose of the recruitment process. However I had a great fun doing this for the last 'a couple of' hours. And I hope you will enjoy verifying it as well.
 
-That's why I have created also this short 'how-to' document to make it easy for you to run and smoke-test it.
+That's why I have also created this short 'how-to' document to make it easy for you to run it and smoke-test it.
 
 So let's start.
 
@@ -10,27 +10,27 @@ So let's start.
 ## Table of contents
 
 * Environments and URLs where applications are available for testing
-* A quick look at what components and how they communicate to each other
-* Tools, frameworks and technologies chosen for the fight
+* A quick look at what kind of components (and how) communicate to each other
+* Tools, frameworks and technologies chosen for this fight
 * How to run the application on the local machine after 'git pull'
 * How to use the application - which button to click and which better not to
 * Data storage options used - where our data is saved
-* Rest API 1000-feet overview
+* Rest API overview (to test the API itself if needed)
 
 
 ## Available testing environments
 
-I have deployed the sample applications to publicly available servers, so that you can quickly run the app without the need to rebuild it and install on local environments. They are available at the following URLs:
+I have deployed the sample applications to publicly available servers, so that you can quickly run the app without the need to rebuild it, configure and install on local environments (anyway, this is also possible). They are available at the following URLs:
 
 1. Client web application:
-  * deployed to Heroku
-    * available at URL: http://meds-app-daniel-fryze-web.herokuapp.com
+  * deployed to Heroku server
+    * available at this URL: http://meds-app-daniel-fryze-web.herokuapp.com/
 2. Backend REST service:
-  * deployed to AWS
-    * available at URL: http://meds-app-daniel-fryze-rest-api.herokuapp.com/medication
+  * deployed to Heroku server as well (different app) 
+    * available at this URL: http://meds-app-daniel-fryze-rest-api.herokuapp.com/medication
     * (detailed description on how to use the API in next sections)
 
-(none of the above has any security attached, so that you don't need any special credentials to log in)
+(none of the above apps has any security enabled, so that you don't need any special credentials to log in)
 
 Other URLs which can be useful for testing:
 
@@ -38,15 +38,16 @@ Other URLs which can be useful for testing:
   * (login: temporary.mate@gmail.com, password: nothingtoadd7)
 2. Access to database deployed to Amazon RDS:
   * (host: us-cdbr-iron-east-03.cleardb.net, port: 3306, user: bd513f1f4c0069, password: 0da13f37)
+(it may happen that for the presentation purposes I will change the config to use H2 on the test env instead of RDS due to net performance reasons, cause recently when I tested it on separate machines i used to cause big delays)
 
 
 ## A quick look at what the components and how communicate with each other:
 
-The general testing environments architecture looks as follows:
+The general testing environments ecosystem currently deployed looks as follows:
 
 ![alt tag](https://scontent-vie1-1.xx.fbcdn.net/hphotos-xtl1/t31.0-8/12747377_10208875028578610_8906946411802289448_o.jpg)
 
-However I hope we will have a chance to deep into thise topics more during direct talk. 
+It's just an overview. However, I hope we will have a chance to deep into these topics more during direct meeting. 
 
 
 ## An even quicker look at the tools I have used to implement this 'proof-of-concept' app:
@@ -55,7 +56,7 @@ It looks as on the picture below:
 
 ![alt tag](https://scontent-vie1-1.xx.fbcdn.net/hphotos-xpf1/t31.0-8/10265506_10208875028538609_6472442415265422439_o.jpg)
 
-Here I hope even more to talk to you about it deeply. 
+Here I hope even more to talk to you about it deeply (what and why).
 
 
 ## Let's have a look how to run the application locally after pulling from Git:
