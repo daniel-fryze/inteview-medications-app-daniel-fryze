@@ -12,7 +12,7 @@ So let's start.
 * Environments and URLs where applications are available for testing
 * A quick look at what components and how they communicate to each other
 * Tools, frameworks and technologies chosen for the fight
-* How to run the application on the local machine after 'git push'
+* How to run the application on the local machine after 'git pull'
 * How to use the application - which button to click and which better not to
 * Data storage options used - where our data is saved
 * Rest API 1000-feet overview
@@ -211,8 +211,8 @@ a
 a
 
 In case of any other questions, I am open to discussion in any kind and at any time. It's never enough to talk about software.
-
 Thank you a lot giving me a chance to have some fun with new tools and technologies.
+Sorry for all the spelling or grammar mistakes I have done.
 
 Looking forward to hear from you.
 
