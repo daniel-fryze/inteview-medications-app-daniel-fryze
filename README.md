@@ -7,6 +7,17 @@ That's why I have created also this short 'how-to' document to make it easy for 
 So let's start.
 
 
+## Table of contents
+
+* Environments and URLs where applications are available for testing
+* A quick look at what components and how they communicate to each other
+* Tools, frameworks and technologies chosen for the fight
+* How to run the application on the local machine after 'git push'
+* How to use the application - which button to click and which better not to
+* Data storage options used - where our data is saved
+* Rest API 1000-feet overview
+
+
 ## Available testing environments
 
 I have deployed the sample applications to publicly available servers, so that you can quickly run the app without the need to rebuild it and install on local environments. They are available at the following URLs:
