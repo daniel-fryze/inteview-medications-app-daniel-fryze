@@ -6,6 +6,7 @@ That's why I have also created this short 'how-to' document to make it easy for 
 
 So let's start.
 
+(Important: the codes are missing tests in general at the moment: both web and rest-api. It's due to time shortage. They will be added until 19-02 morning. Anyway until then the app is published).
 
 ## Table of contents
 
