@@ -46,7 +46,7 @@ Steps to follow:
 
 1) Clone this Git repository to the local hard drive.
 
-2) Navivate to the folder named 'meds-app-daniel-fryze-web' (the one containing i.e. files: 'package.json' and 'server.js') which resides inside the project parent git directory  which is directly inside the parent directory.
+2) Navivate to the folder named 'meds-app-daniel-fryze-web' (the one containing i.e. files: 'package.json' and 'server.js') which resides inside the project parent directory.
 
 3) Install all _npm_ dependencies required by the project using the command:
 
@@ -74,3 +74,36 @@ If it's there, let's open the browser and navigate to this URL.
 If everything is OK, we should see the web app.
 
 
+### Server REST API application:
+
+Prerequisites:
+
+* All you need is your local machine with any preferable operationg system, connected to the internet, Maven 3 or higher installed on it as well as Java 8 installed and set as current JAVA_HOME.
+
+Steps to follow:
+
+1) Clone this Git repository to the local hard drive.
+
+2) Navivate to the folder named 'meds-app-daniel-fryze-rest-api' (the one containing i.e. file 'pom.xml') which resides inside the project parent directory.
+
+3) Build the project code using the command:
+```
+mvn clean package install -DskipTests=true
+```
+
+(running unit tests and integration tests will be described in detail in the following sections)
+
+3) Run the application (initially in local version: using in-memory db and mock firebase) using the following command:
+```
+mvn spring-boot: run -Dprofiles=dev-mock
+```
+
+To run the application in _dev_ mode but connected to local MySQL database + test Firebase account run the alternative command:
+```
+mvn spring-boot: run -Dprofiles=dev-integration
+```
+
+If everything goes ok, you should see among the logs the following message:
+```
+Tomcat started on port(s): 9200 (http)
+```
