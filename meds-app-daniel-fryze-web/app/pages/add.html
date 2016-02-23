@@ -1,0 +1,50 @@
+<div ng-controller="addController">
+	<div class="col-lg-12 headerName">
+		<h3 class="page-header">{{ 'pages.add.header' | translate }}</h3>
+    </div>
+	<div class="row">
+		<div class="col-lg-12">
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<span>{{ 'pages.add.panel.new.heading' | translate }}</span>
+				</div>
+				<div class="panel-body">
+					<form id="newMedicationForm" name="addForm" novalidate="novalidate" ng-submit="addNew()" ng-submit-force="true">
+						<div>
+						<div class="form-group col-lg-6">
+							<label>{{ 'pages.add.label.name' | translate }}<span style="color:red">*</span></label>
+							<input ng-model="medication.name" ng-class="{'form-control': !addForm.$invalid, 'form-control input-required': addForm.$invalid}" 
+							       placeholder="{{ 'pages.add.placeholder.req.max100' | translate }}" required ng-maxlength="100" disable-validation-message="true">
+						</div>
+						<div class="form-group col-lg-6">
+							<label>{{ 'pages.add.label.generic' | translate }}</label>
+							<input ng-model="medication.genericName" ng-maxlength="100" class="form-control" placeholder="{{ 'pages.add.placeholder.max100' | translate }}">
+						</div>
+						<div class="form-group col-lg-6">
+							<label>{{ 'pages.add.label.dosage' | translate }}</label>
+							<input ng-model="medication.dosage" ng-maxlength="100" class="form-control" placeholder="{{ 'pages.add.placeholder.max100' | translate }}">
+						</div>
+						<div class="form-group col-lg-6">
+							<label>{{ 'pages.add.label.producer' | translate }}</label>
+							<select ng-model="medication.producerName">
+								<option ng-repeat="producer in producerOptions" class="form-control" value="{{producer}}">{{producer}}</option>
+							</select>
+						</div>
+						<div class="form-group col-lg-6">
+							<label>{{ 'pages.add.label.description' | translate }}</label>
+							<textarea ng-model="medication.description" ng-maxlength="1000" class="form-control" rows="3" placeholder="{{ 'pages.add.placeholder.max100' | translate }}"></textarea>
+						</div>
+						<div class="form-group col-lg-6">
+							<label>{{ 'pages.add.label.interactions' | translate }}</label>
+							<textarea ng-model="medication.interactions" ng-maxlength="1000" class="form-control" rows="3" placeholder="{{ 'pages.add.placeholder.max1000' | translate }}"></textarea>
+						</div>
+						</div>
+						<div class="button-container">
+							<button class="btn btn-default btn-add" type="submit" ng-disabled="addForm.$invalid">{{ 'pages.add.button.save' | translate }}</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

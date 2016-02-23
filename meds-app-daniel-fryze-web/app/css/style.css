@@ -154,6 +154,7 @@
 	margin-left: 30%;
 	margin-right: 30%;
 	width: 40%;
+	float: left;
 }
 
 .btn-add {
@@ -183,4 +184,42 @@
 	border-radius: 6px !important;
 	background-color: #f2dede;
 	color: #a94442;
+}
+
+.pull-right {
+	margin-top: 2px !important;
+}
+
+.panel-dashboard-blue {
+	background-color: rgb(51, 122, 183) !important;
+    border-color: rgb(51, 122, 183) !important;	
+}
+
+.panel-dashboard-green {
+	background-color: rgb(92, 184, 92) !important;
+	border-color: rgb(92, 184, 92) !important;
+}
+
+.panel-dashboard-yellow {
+	background-color: rgb(240, 173, 78) !important;
+	border-color: rgb(240, 173, 78) !important;
+}
+
+.search-form-input-div {
+	float: left; 
+	width: 70%;
+}
+
+.search-form-input {
+	height: 34px;
+	float: left; 
+	width: 100%
+}
+
+.float-left {
+	float: left;
+}
+
+.fa-tasks:before {
+    content: "\f0ae";
 }

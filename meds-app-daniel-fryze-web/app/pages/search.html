@@ -1,0 +1,173 @@
+<div ng-controller="searchController">
+	<div class="col-lg-12 headerName">
+		<h3 class="page-header">{{ 'pages.search.header' | translate }}</h3>
+	</div>
+	<div class="row">
+		<div class="col-lg-12">
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<span>{{ 'pages.search.panel.query.heading' | translate }}</span>
+                </div>
+				<div class="panel-body">
+					<div class="form-group">
+						<form name="searchForm" novalidate="novalidate" ng-submit="search()" ng-submit-force="true">
+							<div class="search-form-input-div">
+								<input class="form-control" type="text" class="form-control search-form-input" ng-model="searchKey"
+								       placeholder="{{ 'pages.search.placeholders.search' | translate }} ..." required disable-validation-message="" />
+							</div>
+							<div>
+                            <button class="btn btn-default btn-search float-left" type="submit" ng-disabled="searchForm.$invalid">
+								{{ 'pages.search.button.search' | translate }}
+                            </button>
+                            <button class="btn btn-default btn-search float-left" type="button" ng-click="clearAll()">
+								{{ 'pages.search.button.clear' | translate }}
+                            </button>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-lg-6">
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<span>{{ 'pages.search.panel.results.heading' | translate }}:</span>
+					<span class="searchDetails"><em>{{recentSearchKey}}</em></span>
+				</div>
+				<div class="panel-body">
+					<div class="alert alert-warning" ng-hide="searchMethodInvoked">
+						<span>{{ 'pages.search.messages.results.1' | translate }}.</span>
+					</div>
+					<div ng-show="searchMethodInvoked">
+						<div class="alert alert-danger" ng-hide="searchResultsExist">
+							<span>{{ 'pages.search.messages.results.2' | translate }}.</span>
+							<br/>
+							<span>{{ 'pages.search.messages.results.3' | translate }}.</span>
+						</div>
+						<div ng-show="searchResultsExist">
+							<div class="list-group">
+								<a ng-repeat="result in searchResults" ng-click="findDetails(result[0])"
+								   ng-class="{'list-group-item list-group-item-chosen': (chosenMedId === result[0]), 'list-group-item': (chosenMedId !== result[0])}">
+									<span>{{result[1]}}</span>
+									<span ng-if="result[2]" class="listDetail">
+										<em>{{ 'pages.search.messages.producer' | translate }}: {{result[2]}}</em>
+									</span>
+									<span ng-if="!result[2]" class="listDetail">
+										<em>{{ 'pages.search.messages.producer' | translate }}: {{ 'pages.search.messages.unknown' | translate }}</em>
+									</span>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-lg-6">
+			<div class="panel panel-default">
+                <div class="panel-heading">
+					<span>{{ 'pages.search.panel.details.heading' | translate }}:</span>
+					<span class="searchDetails"><em>{{findResult.name}}</em></span>
+                </div>
+                <div class="panel-body">
+					<div class="alert alert-warning" ng-hide="findMethodInvoked">
+						<span>{{ 'pages.search.messages.details.1' | translate }}.</span>
+                    </div>
+					<div ng-show="findMethodInvoked">
+						<div class="alert alert-danger" ng-hide="findResultExists">
+							<span>{{ 'pages.search.messages.details.2' | translate }}.</span>
+							<br/>
+							<span>{{ 'pages.search.messages.details.3' | translate }}.</span>
+						</div>
+						<div ng-show="findResultExists">
+							<ul class="nav nav-tabs">
+								<li class="active">
+									<a data-target="#info" data-toggle="tab" ng-click="selectTab('info')" ng-class="{'selected-details-tab': (selectedDetailsTab === 'info')}">
+										{{ 'pages.search.tabs.title.info' | translate }}
+									</a>
+								</li>
+								<li>
+									<a data-target="#description" data-toggle="tab" ng-click="selectTab('description')" ng-class="{'selected-details-tab': (selectedDetailsTab === 'description')}">
+										{{ 'pages.search.tabs.title.description' | translate }}
+									</a>
+								</li>
+								<li>
+									<a data-target="#dosage" data-toggle="tab" ng-click="selectTab('dosage')" ng-class="{'selected-details-tab': (selectedDetailsTab === 'dosage')}">
+										{{ 'pages.search.tabs.title.dosage' | translate }}
+									</a>
+								</li>
+								<li>
+									<a data-target="#interactions" data-toggle="tab" ng-click="selectTab('interactions')" ng-class="{'selected-details-tab': (selectedDetailsTab === 'interactions')}">
+										{{ 'pages.search.tabs.title.interactions' | translate }}
+									</a>
+								</li>
+							</ul>
+							<div class="tab-content find-details">
+								<div class="tab-pane fade in active" id="info">
+									<h4>{{ 'pages.search.details.title.details' | translate }}</h4>
+									<div class="list-group no-margin-bottom">
+										<a class="list-group-item">
+											<span>{{ 'pages.search.details.label.name' | translate }}</span>
+											<span class="pull-right text-muted small">
+												<em ng-if="findResult.name">{{findResult.name}}</em>
+												<em ng-if="!findResult.name">-</em>
+											</span>
+										</a>
+										<a class="list-group-item">
+											<span>{{ 'pages.search.details.label.generic' | translate }}</span>
+											<span class="pull-right text-muted small">
+												<em ng-if="findResult.genericName">{{findResult.genericName}}</em>
+												<em ng-if="!findResult.genericName">-</em>
+											</span>
+										</a>
+										<a class="list-group-item">
+											<span>{{ 'pages.search.details.label.date' | translate }}</span>
+											<span class="pull-right text-muted small">
+												<em ng-if="findResult.creationDate">{{findResult.creationDate}}</em>
+												<em ng-if="!findResult.creationDate">-</em>
+											</span>
+										</a>
+										<a class="list-group-item">
+											<span>{{ 'pages.search.details.label.producer' | translate }}</span>
+											<span class="pull-right text-muted small">
+												<em ng-if="findResult.producerName">{{findResult.producerName}}</em>
+												<em ng-if="!findResult.producerName">-</em>
+											</span>
+										</a>
+										<a class="list-group-item">
+											<span>{{ 'pages.search.details.label.reads' | translate }}</span>
+											<span class="pull-right text-muted small">
+												<em>{{requestsCount.counter}}</em>
+											</span>
+										</a>
+									</div>
+								</div>
+								<div class="tab-pane fade" id="description">
+									<h4>{{ 'pages.search.tabs.interactions.heading' | translate }}</h4>
+									<p ng-if="findResult.description">{{findResult.description}}</p>
+									<p ng-if="!findResult.description" class="data-unavailable">{{ 'pages.search.info.unavailable' | translate }}</p>
+								</div>
+								<div class="tab-pane fade" id="dosage">
+									<h4>{{ 'pages.search.tabs.interactions.heading' | translate }}</h4>
+									<p ng-if="findResult.dosage">{{findResult.dosage}}</p>
+									<p ng-if="!findResult.dosage" class="data-unavailable">{{ 'pages.search.info.unavailable' | translate }}</p>
+								</div>
+								<div class="tab-pane fade" id="interactions">
+									<h4>{{ 'pages.search.tabs.description.heading' | translate }}</h4>
+									<p ng-if="findResult.interactions">{{findResult.interactions}}</p>
+									<p ng-if="!findResult.interactions" class="data-unavailable">{{ 'pages.search.info.unavailable' | translate }}</p>
+								</div>
+							</div>
+							<div class="button-container">
+								<button class="btn btn-default btn-refresh" type="button" ng-click="refreshFind()">
+									{{ 'pages.search.button.refresh' | translate }}
+								</button>
+							</div>
+						</div>
+					</div>
+				</div>
+        `	</div>
+		</div>
+	</div>
+</div>

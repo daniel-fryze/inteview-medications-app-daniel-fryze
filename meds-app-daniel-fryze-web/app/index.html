@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 
-<html ng-app="MedicationsDatabaseApp">
+<html>
 
 <head>
 
-	<!-- META HEADERS -->
+	<!-- Meta headers -->
 
     <meta charset="utf-8">
+
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -15,108 +16,84 @@
 
     <title>Medications Book - REST App - application from: Daniel Fryze</title>
 
-	<!-- STYLES - BOWER -->
+	<!-- Styles third-party -->
 
-    <link rel="stylesheet" href="./bower_components/bootstrap/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="./bower_components/font-awesome/css/font-awesome.min.css">
-	<link rel="stylesheet" href="./bower_components/bootstrap/dist/css/bootstrap.css"/>
-	<link rel="stylesheet" href="./bower_components/animate.css/animate.css"/>
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/font-awesome.min.css">
+	<link rel="stylesheet" href="./css/bootstrap.css"/>
+	<link rel="stylesheet" href="./css/animate.css"/>
 
-	<!-- STYLES - OWN -->
+	<!-- Styles own -->
 	<link rel="stylesheet" href="./css/style.css">
-
-	<!-- SCRIPTS - BOWER -->
-	<script src="./bower_components/jquery/dist/jquery.js"></script>
-	<script src="./bower_components/angular/angular.js"></script>
-	<script src="./bower_components/angular-route/angular-route.js"></script>
-	<script src="./bower_components/angular-animate/angular-animate.js"></script>
-	<script src="./bower_components/bootstrap/dist/js/bootstrap.js"></script>
-	<script src="./bower_components/angular-resource/angular-resource.js"></script>
-	<script src="./bower_components/angular-auto-validate/dist/jcs-auto-validate.min.js"></script>
-	<script src="./bower_components/firebase/firebase.js"></script>
-	<script src="./bower_components/angularfire/dist/angularfire.js"></script>
-	<script src="./bower_components/restangular/dist/restangular.js"></script>
-	<script src="./bower_components/underscore/underscore.js"></script>
-    <script src="./bower_components/metisMenu/dist/metisMenu.min.js"></script>
-    <script src="./bower_components/raphael/raphael-min.js"></script>
-    <script src="./bower_components/morrisjs/morris.min.js"></script>
 
 </head>
 
-<body>
-
+<body ng-app="application">
+		
     <div id="wrapper">
 
 		<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
 			<div class="container">
 				<div class="navbar-header">
-					<a class="navbar-brand" href="#dashboard">Medications Book - REST App - application from: Daniel Fryze</a>
+					<a class="navbar-brand" href="#dashboard">{{ 'template.main.title' | translate }}</a>
 				</div>
 				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 					<ul class="nav navbar-nav navbar-right">
 						<li>
-							<a href="#dashboard" ng-class="{'selectedMainTab': (selectedMainTab === 'dashboard')}">Dashboard</a>
+							<a href="#dashboard" ng-class="{'selectedMainTab': (selectedMainTab === 'dashboard')}">
+								{{ 'template.main.menu.dashboard' | translate }}
+							</a>
 						</li>
 						<li>
-							<a href="#search" ng-class="{'selectedMainTab': (selectedMainTab === 'search')}">Search engine</a>
+							<a href="#search" ng-class="{'selectedMainTab': (selectedMainTab === 'search')}">
+								{{ 'template.main.menu.add' | translate }}
+							</a>
 						</li>
 						<li>
-							<a href="#add" ng-class="{'selectedMainTab': (selectedMainTab === 'add')}">Add new medication</a>
+							<a href="#add" ng-class="{'selectedMainTab': (selectedMainTab === 'add')}">
+								{{ 'template.main.menu.search' | translate }}
+							</a>
 						</li>
 					</ul>
 				</div>
 			</div>
 		</nav>
 
-		<!-- The placeholder for views -->
+		<!-- Placeholder for the views -->
+
         <div id="page-wrapper">
 			<div ng-view></div>
         </div>
 
+		<div ng-controller="containerController">
+
+			<!-- Modal windows used across the whole application -->
+
+     		<script type="text/ng-template" id="modal.template">
+         		<div class="modal fade">
+          			<div class="modal-dialog">
+            			<div class="modal-content">
+              				<div ng-class="{'modal-header modal-header-failure': !isSuccess, 'modal-header modal-header-success': isSuccess}">
+                				<button type="button" class="close" ng-click="dismissModal('Closed')" data-dismiss="modal" aria-hidden="true">&times;</button>
+                				<h4 class="modal-title" ng-if="isSuccess">{{ 'modal.confirmation.success.title' | translate }}</h4>
+                				<h4 class="modal-title" ng-if="!isSuccess">{{ 'modal.confirmation.error.title' | translate }}</h4>
+              				</div>
+              				<div class="modal-body">
+                				<p ng-if="message">{{message}}</p>
+                				<p ng-if="details">{{details}}</p>
+              				</div>
+            			</div>
+          			</div>
+        		</div>
+     		</script>
+
+		</div>
+
     </div>
 
-	<!-- OTHER APP/ANGULAR SPECIFIC JS SCRIPTS -->
+	<!-- Importing the browserified JS file -->
 
-	<script src="./js/main.js"></script>
-	<script src="./js/controllers.js"></script>
-	<script src="./js/services.js"></script>
-
-	<!-- MODAL WINDOWS USED ACROSS THE APPLICATION -->
-
-	<div class="modal fade" id="modalConfirmationSuccess" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-	  <div class="modal-dialog" role="document">
-		<div class="modal-content">
-		  <div class="modal-header modal-header-success">
-			<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-			<h4 class="modal-title" id="myModalLabel">Operation successful</h4>
-		  </div>
-		  <div class="modal-body">
-			A new medication has been added to database.
-			You can now search it via search engine.
-		  </div>
-		  <div class="modal-footer">
-			<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-		  </div>
-		</div>
-	  </div>
-	</div>
-
-	<div class="modal fade" id="modalConfirmationFailure" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-	  <div class="modal-dialog" role="document">
-		<div class="modal-content">
-		  <div class="modal-header modal-header-failure">
-			<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-			<h4 class="modal-title" id="myModalLabel">Operation failed</h4>
-		  </div>
-		  <div class="modal-body">
-			Description of the problem: <span id="failureReason"></span>
-		  </div>
-		  <div class="modal-footer">
-			<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-		  </div>
-		</div>
-	  </div>
-	</div>
+	<script src="dist/app.js" type="text/javascript"></script>
 
 </body>
 
