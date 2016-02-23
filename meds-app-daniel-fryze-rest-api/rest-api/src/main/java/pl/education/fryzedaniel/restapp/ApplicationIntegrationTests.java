@@ -5,9 +5,10 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
 
+@Profile("integration-tests")
 @Configuration
 @ComponentScan
 @EnableAutoConfiguration
-@Profile("integration-tests")
+//@EnableCaching
 public class ApplicationIntegrationTests {
 }

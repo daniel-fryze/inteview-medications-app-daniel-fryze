@@ -21,6 +21,7 @@ import pl.education.fryzedaniel.restapp.model.repositories.MedicationRepository;
 @ComponentScan
 @EnableAutoConfiguration
 //@EnableCaching
+//@Profile({"dev-mock", "dev-integration"})
 public class Application {
 
     @Bean

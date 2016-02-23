@@ -2,7 +2,7 @@
 
 // Service responsible for generating messages which are later passed to modals
 
-module.exports = function() {
+module.exports = function($log) {
 
 	// Constructor creating the new 'message' instance
 
@@ -20,8 +20,8 @@ module.exports = function() {
 
 	// Creates new 'message' instance based on input Rest response object
 
-	this.generateErrorMessage = function(response) {
-		return new Message(false, response.generalMessage, response.detailedMessage);
+	this.generateErrorMessage = function(responseData) {
+		return new Message(false, responseData.generalMessage, responseData.detailedMessage);
 	};
 
 	// Creates new 'message' instance for success scenarios
