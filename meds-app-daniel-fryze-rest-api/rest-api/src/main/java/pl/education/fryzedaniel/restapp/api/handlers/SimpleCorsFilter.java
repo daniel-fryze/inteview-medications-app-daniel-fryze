@@ -1,6 +1,6 @@
 package pl.education.fryzedaniel.restapp.api.handlers;
 
-import static pl.education.fryzedaniel.restapp.api.utilities.AppConstants.*;
+import static pl.education.fryzedaniel.restapp.api.utilities.Constants.*;
 
 import java.io.IOException;
 
@@ -21,7 +21,7 @@ import org.springframework.stereotype.Component;
  * OPTIONS requests (sent internally by AngularJS) from different origins. It's mostly technical
  * configuration specific to AngularJS clients.
  * 
- * @author daniel.fryze
+ * @author daniel.fryzek
  */
 @Component
 public class SimpleCorsFilter implements Filter {
@@ -29,7 +29,7 @@ public class SimpleCorsFilter implements Filter {
 	/** {@inheritDoc} */
 	@Override
 	public void init(FilterConfig config) throws ServletException {
-		Logger.getLogger(this.getClass()).debug("CORS servlet initialization.");
+		Logger.getLogger(this.getClass()).debug("Servlet CORS initialization.");
 	}
 
 	/** {@inheritDoc} */
@@ -47,7 +47,7 @@ public class SimpleCorsFilter implements Filter {
 	/** {@inheritDoc}} */
 	@Override
 	public void destroy() {
-		Logger.getLogger(this.getClass()).debug("CORS servlet destruction.");
+		Logger.getLogger(this.getClass()).debug("Servlet CORS destruction.");
 	}
 
 }

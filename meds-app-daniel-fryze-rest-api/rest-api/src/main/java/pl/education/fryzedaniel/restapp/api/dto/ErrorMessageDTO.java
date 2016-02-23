@@ -10,10 +10,10 @@ import com.fasterxml.jackson.annotation.JsonInclude.Include;
  * A DTO type used for transporting details of error sent in response body (in <tt>JSON</tt> format)
  * in case of any error or problem scenario taking place on the server while processing.
  * 
- * @author daniel.fryze
+ * @author daniel.fryze.k
  */
 @JsonInclude(Include.NON_NULL)
-public class MessageDTO {
+public class ErrorMessageDTO {
 
 	/** Code specifying the cause of the problem for the client. */
 	private String code;

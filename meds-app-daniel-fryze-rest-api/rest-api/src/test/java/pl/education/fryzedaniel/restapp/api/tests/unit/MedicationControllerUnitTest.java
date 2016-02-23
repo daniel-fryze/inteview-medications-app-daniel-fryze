@@ -13,14 +13,14 @@ import org.springframework.boot.test.SpringApplicationConfiguration;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import pl.education.fryzedaniel.restapp.ApplicationIntegrationTests;
-import pl.education.fryzedaniel.restapp.ApplicationUnitTests;
+import pl.education.fryzedaniel.restapp.ConfigurationTestsIntegration;
+import pl.education.fryzedaniel.restapp.ConfigurationTestsUnit;
 import pl.education.fryzedaniel.restapp.api.controllers.MedicationController;
 import pl.education.fryzedaniel.restapp.api.tests.UnitTestMarker;
 import pl.education.fryzedaniel.restapp.model.entities.Medication;
 import pl.education.fryzedaniel.restapp.model.repositories.MedicationRepository;
 
-@SpringApplicationConfiguration(classes = ApplicationUnitTests.class)
+@SpringApplicationConfiguration(classes = ConfigurationTestsUnit.class)
 @ActiveProfiles("unit-tests")
 @RunWith(SpringJUnit4ClassRunner.class)
 @Category(UnitTestMarker.class)

@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
 import org.apache.log4j.Logger;
-import pl.education.fryzedaniel.restapp.api.dto.MessageDTO;
+import pl.education.fryzedaniel.restapp.api.dto.ErrorMessageDTO;
 import pl.education.fryzedaniel.restapp.api.services.MessageDetailsFactory;
 
 /**
@@ -23,6 +23,8 @@ import pl.education.fryzedaniel.restapp.api.services.MessageDetailsFactory;
  */
 @ControllerAdvice
 public class ErrorHandler {
+
+	// TODO 2: to refactor
 
 	@Autowired
 	private MessageDetailsFactory messageDetailsFactory;
@@ -37,13 +39,13 @@ public class ErrorHandler {
 	@ExceptionHandler(MethodArgumentNotValidException.class)
 	@ResponseStatus(HttpStatus.BAD_REQUEST)
 	@ResponseBody
-	public MessageDTO processValidationError(final MethodArgumentNotValidException ex) {
+	public ErrorMessageDTO processValidationError(final MethodArgumentNotValidException ex) {
 
 		Logger.getLogger(this.getClass()).error(ex.getMessage(), ex);
 
 		FieldError fieldError = ex.getBindingResult().getFieldError();
 
-		MessageDTO message = null;
+		ErrorMessageDTO message = null;
 		if (fieldError != null) {
 			message = messageDetailsFactory.generateMessageForValidationError(
 				fieldError.getDefaultMessage(), fieldError.getField(), fieldError.getRejectedValue());
@@ -61,11 +63,11 @@ public class ErrorHandler {
 	@ExceptionHandler(DataAccessException.class)
 	@ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
 	@ResponseBody
-	public MessageDTO processException(final DataAccessException ex) {
+	public ErrorMessageDTO processException(final DataAccessException ex) {
 
 		Logger.getLogger(this.getClass()).error(ex.getMessage(), ex);
 
-		MessageDTO message = null;
+		ErrorMessageDTO message = null;
 		if (ex != null) {
 			message = messageDetailsFactory.generateMessageForDataRelatedErrors(ex.getMessage());
 		}
@@ -82,11 +84,11 @@ public class ErrorHandler {
 	@ExceptionHandler(Exception.class)
 	@ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
 	@ResponseBody
-	public MessageDTO processExceptionE(final Exception ex) {
+	public ErrorMessageDTO processExceptionE(final Exception ex) {
 
 		Logger.getLogger(this.getClass()).error(ex.getMessage(), ex);
 
-		MessageDTO message = null;
+		ErrorMessageDTO message = null;
 		if (ex != null) {
 			message = messageDetailsFactory.generateMessageForOtherServerError(ex.getMessage());
 		}

@@ -6,7 +6,7 @@ package pl.education.fryzedaniel.restapp.api.dto;
  * sent to the client in response message in case of exception scenario.
  * These error codes are specific to this REST API, and describe in details the problem cause.
  * 
- * @author daniel.fryze
+ * @author daniel.fryze.k
  */
 public enum ProblemType {
 

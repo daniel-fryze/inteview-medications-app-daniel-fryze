@@ -5,7 +5,15 @@ package pl.education.fryzedaniel.restapp.api.utilities;
  * 
  * @author daniel.fryze
  */
-public interface AppConstants {
+public interface Constants {
+
+	/** GENERAL PURPOSE CONSTANTS */
+
+	String DEFAULT_ENCODING = "UTF-8";
+
+	/** CONSTANTS WITH PATHS TO APP-INTERNAL FILES */
+
+	String MESSAGES_PATH = "messages/messages";
 
 	/** FIREBASE RELATED CONFIGURATION CONSTANTS */
 
@@ -16,11 +24,13 @@ public interface AppConstants {
 
 	String FB_PATH_MEDICATIONS_READ_COUNTER_PREFIX = "medication_reads/counters/";
 	String FB_PATH_MEDICATIONS_READ_DATE_PREFIX = "medication_reads/dates/";
-	String FB_PATH_MEDICATIONS_TOTAL_READ_COUNT = "medication_reads/counters_sums/totalcount";
-	String FB_COUNTER_PROP = "counter";
+	String FB_PATH_MEDICATIONS_TOTAL_READ_COUNT = "medication_reads/counters_sums_total/counter";
+	String FB_PATH_MEDICATIONS_YEAR_READ_COUNT = "medication_reads/counters_sums_year/counter";
+	String FB_PATH_MEDICATIONS_TODAY_READ_COUNT = "medication_reads/counters_sums_today/counter";
+	String FB_UPDATE_TIMESTAMP_PROP_REVERSE = "updateDateTimestampReverse";
 	String FB_COUNTER_PROP_REVERSE = "counterReverse";
 	String FB_UPDATE_DATE_PROP = "updateDate";
-	String FB_UPDATE_TIMESTAMP_PROP_REVERSE = "updateDateTimestampReverse";
+	String FB_COUNTER_PROP = "counter";
 
 	/** HTTP PROTOCOL SPECIFIC CONSTANTS */
 

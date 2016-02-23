@@ -41,6 +41,10 @@
 	<build>
 		<plugins>
 			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+			<plugin>
 				<artifactId>maven-surefire-plugin</artifactId>
 				<configuration>
 					<excludedGroups>pl.education.fryzedaniel.restapp.api.tests.IntegrationTestMarker</excludedGroups>
@@ -68,7 +72,7 @@
 
 	<profiles>
 		<profile>
-			<id>unit-tests</id>
+			<id>tests-unit</id>
 			<build>
 				<plugins>
 					<plugin>
@@ -81,7 +85,7 @@
 			</build>
 		</profile>
 		<profile>
-			<id>integration-tests</id>
+			<id>tests-integration</id>
 			<build>
 				<plugins>
 					<plugin>

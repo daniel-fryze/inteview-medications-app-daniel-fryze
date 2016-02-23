@@ -5,7 +5,7 @@ import org.springframework.context.MessageSource;
 import org.springframework.context.i18n.LocaleContextHolder;
 import org.springframework.stereotype.Service;
 
-import pl.education.fryzedaniel.restapp.api.dto.MessageDTO;
+import pl.education.fryzedaniel.restapp.api.dto.ErrorMessageDTO;
 import pl.education.fryzedaniel.restapp.api.dto.ProblemType;
 
 /**
@@ -16,6 +16,8 @@ import pl.education.fryzedaniel.restapp.api.dto.ProblemType;
  */
 @Service
 public class MessageDetailsFactory {
+
+	// TODO 2: to refactor
 
 	// AUTOWIRED DEPENDENCIES
 
@@ -34,9 +36,9 @@ public class MessageDetailsFactory {
 	 * @param messageDetails error details
 	 * @return specific <code>MessageDTO</code> object
 	 */
-	public MessageDTO generateMessageForDataRelatedErrors(final String messageDetails) {
+	public ErrorMessageDTO generateMessageForDataRelatedErrors(final String messageDetails) {
 
-		MessageDTO message = new MessageDTO();
+		ErrorMessageDTO message = new ErrorMessageDTO();
 		message.setCode(ProblemType.DATA_RELATED_ERROR.getCode());
 		message.setGeneralMessage(messagesRepository.getMessage(ProblemType.DATA_RELATED_ERROR.getMessage(),
 			null, LocaleContextHolder.getLocale()));
@@ -50,9 +52,9 @@ public class MessageDetailsFactory {
 	 * @param messageDetails error details
 	 * @return specific <code>MessageDTO</code> object
 	 */
-	public MessageDTO generateMessageForDuplicateEntity(final String fieldName, final String fieldValue) {
+	public ErrorMessageDTO generateMessageForDuplicateEntity(final String fieldName, final String fieldValue) {
 
-		MessageDTO message = new MessageDTO();
+		ErrorMessageDTO message = new ErrorMessageDTO();
 		message.setCode(ProblemType.DUPLICATE_ENTITY.getCode());
 		message.setGeneralMessage(messagesRepository.getMessage(ProblemType.DUPLICATE_ENTITY.getMessage(),
 			new String[] { fieldValue, fieldName }, LocaleContextHolder.getLocale()));
@@ -67,10 +69,10 @@ public class MessageDetailsFactory {
 	 * @param messageDetails error details
 	 * @return specific <code>MessageDTO</code> object
 	 */
-	public MessageDTO generateMessageForValidationError(final String detailedMessageCode, final String fieldName,
+	public ErrorMessageDTO generateMessageForValidationError(final String detailedMessageCode, final String fieldName,
 			final Object fieldValue) {
 
-		MessageDTO message = new MessageDTO();
+		ErrorMessageDTO message = new ErrorMessageDTO();
 		message.setCode(ProblemType.VALIDATION_ERROR.getCode());
 
 		String rejectedValue = (String) fieldValue;
@@ -90,9 +92,9 @@ public class MessageDetailsFactory {
 	 * @param messageDetails error details
 	 * @return specific <code>MessageDTO</code> object
 	 */
-	public MessageDTO generateMessageForOtherServerError(final String messageDetails) {
+	public ErrorMessageDTO generateMessageForOtherServerError(final String messageDetails) {
 
-		MessageDTO message = new MessageDTO();
+		ErrorMessageDTO message = new ErrorMessageDTO();
 		message.setCode(ProblemType.SERVER_INTERNAL_TECHNICAL_ERROR.getCode());
 		message.setGeneralMessage(messagesRepository.getMessage(ProblemType.SERVER_INTERNAL_TECHNICAL_ERROR.getMessage(),
 			null, LocaleContextHolder.getLocale()));

@@ -18,9 +18,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.util.UriComponentsBuilder;
 
-import pl.education.fryzedaniel.restapp.api.dto.MessageDTO;
-import pl.education.fryzedaniel.restapp.api.services.IFirebaseClientService;
+import pl.education.fryzedaniel.restapp.api.dto.ErrorMessageDTO;
 import pl.education.fryzedaniel.restapp.api.services.MessageDetailsFactory;
+import pl.education.fryzedaniel.restapp.api.services.interfaces.IFirebaseClient;
 import pl.education.fryzedaniel.restapp.model.entities.Medication;
 import pl.education.fryzedaniel.restapp.model.repositories.MedicationRepository;
 
@@ -35,7 +35,7 @@ import pl.education.fryzedaniel.restapp.model.repositories.MedicationRepository;
 public class MedicationController {
 
 	@Autowired
-	public IFirebaseClientService firebaseService;
+	public IFirebaseClient firebaseService;
 
 	@Autowired
 	private MessageDetailsFactory messageDetailsFactory;
@@ -70,7 +70,7 @@ public class MedicationController {
 
 		// checking if there is already an existing resource with the same name in the system
 		if (medicationRepository.existsByName(newEntity.getName())) {
-			return new ResponseEntity<MessageDTO>(
+			return new ResponseEntity<ErrorMessageDTO>(
 					messageDetailsFactory.generateMessageForDuplicateEntity("name", newEntity.getName()),
 					HttpStatus.CONFLICT);
 		}
@@ -93,7 +93,9 @@ public class MedicationController {
 	@RequestMapping(value = "/{id}", method = RequestMethod.GET)
 	public ResponseEntity<Medication> getById(final @PathVariable Long id) {
 		Medication medication = this.medicationRepository.findOne(id);
-		firebaseService.updateReadCount(medication.getName());
+		if (medication != null) {
+			firebaseService.updateReadCount(medication.getName());
+		}
 		return new ResponseEntity<Medication>(medication, HttpStatus.OK);
 	}
 
@@ -113,6 +115,8 @@ public class MedicationController {
 			final @RequestParam(value = "namePattern", required = true) String namePattern,
 			final @RequestParam(value = "namesOnly", required = false) Optional<Boolean> namesProjection,
 			final @RequestParam(value = "partialSearch", required = false) Optional<Boolean> partialSearch) {
+
+		// TODO 5: dodac obsluge gdy nie mamy 'name-pattern'
 
 		if (!paremeterEnabled(namesProjection)) {
 			if (paremeterEnabled(partialSearch)) {

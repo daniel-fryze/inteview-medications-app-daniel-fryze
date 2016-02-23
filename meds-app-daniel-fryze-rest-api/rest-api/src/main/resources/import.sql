@@ -1,0 +1,1 @@
+CREATE DATABASE meds_book_rest_app_db;
