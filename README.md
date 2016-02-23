@@ -82,19 +82,14 @@ Steps to follow:
 npm install
 ```
 
-4) Install all _bower_ dependencies required by the project using the command:
+4) Run the build process of the project using the command:
 ```
-bower install
-```
-
-5) Run the build process of the project using the command:
-```
-gulp
+gulp server
 ```
 
 6) After these three commands executed successfully, we should see the followin message in the console:
 ```
-Server started http://localhost:8888
+Server started http://localhost:8008
 ```
 
 If it's there, let's open the browser and navigate to this URL.
@@ -116,18 +111,12 @@ Steps to follow:
 
 3) Build the project code using the command:
 ```
-mvn clean package install -DskipTests=true
-```
-(running unit tests and integration tests will be described in detail in the following sections)
-
-3) Navigate one level lower to the folder named 'rest-api'. Run the application (initially in local version: using in-memory database) using the following command:
-```
-mvn spring-boot:run -Dprofiles=devMock
+mvn clean package install
 ```
 
-To run the application in still _dev_ mode but _connected to local MySQL database_. run the alternative command (however in this case to make it work, you need to configure and run local MySQL database as well (the configuration for all possible database server: Local, Amazon RDS, Embedded H2 are defined in file 'application.properties' and commnted, so you can uncomment it when needed + check if the Firebase account in file 'app.properties' is valid and working: initially it's a testing account: https://temporarymateapp.firebaseio.com/):
+3) Navigate one level lower to the folder named 'rest-api'. Run the application:
 ```
-mvn spring-boot:run -Dprofiles=devIntegration
+mvn spring-boot:run -Drun.profiles=dev-integration
 ```
 
 If everything goes ok, you should see among the logs the following message:
@@ -142,18 +131,6 @@ http://localhost:9200/medication?namePattern=a?partialSearch=true
 ```
 
 I you see the following content (not any error), it means that the REST API is deployed successfully. Otherwise something must have gone wrong.
-
-To run all the **unit tests** (using mocked DB repositories + mocked firebase service) for the application run the following command:
-```
-mvn test -P unit-tests
-```
-
-To run all the *integration tests** (using real local database MySQL + real Firebase service with testing storage) run the command:
-```
-mvn test -P integration-tests
-```
-
-I have implemented only sample unit and integration tests. Implementing all is beyond the scope of this 'proof-of-concept'.
 
 
 ## A short tutorial on how to use the app in general:
