@@ -6,7 +6,6 @@ That's why I have also created this short 'how-to' document to make it easy for 
 
 So let's start.
 
-(Important: the codes are missing tests in general at the moment: both web and rest-api. It's due to time shortage. They will be added until 19-02 morning. Anyway until then the app is published).
 
 ## Table of contents
 
@@ -39,7 +38,7 @@ Other URLs which can be useful for testing:
   * (login: temporary.mate@gmail.com, password: nothingtoadd7)
 2. Access to database deployed to Amazon RDS:
   * (host: us-cdbr-iron-east-03.cleardb.net, port: 3306, user: bd513f1f4c0069, password: 0da13f37)
-(it may happen that for the presentation purposes I will change the config to use H2 on the test env instead of RDS due to net performance reasons, cause recently when I tested it on separate machines i used to cause big delays)
+(it may happen that for the presentation purposes I will change the config to use H2 on the test env instead of RDS due to net performance reasons, because recently when I tested it on separate machines (Rest API on Heroku + Database on RDS it used to cause big delays)
 
 
 ## A quick look at what the components and how communicate with each other:
