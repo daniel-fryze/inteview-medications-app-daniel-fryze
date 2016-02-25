@@ -6,7 +6,10 @@ module.exports = {
 
 	// Rest API related data
 
-	REST_API_APP_URL                   : "https://meds-app-daniel-fryze-rest-api.herokuapp.com/",
+	// Heroku deployed backend
+	// REST_API_APP_URL                   : "https://meds-app-daniel-fryze-rest-api.herokuapp.com/",
+	// Locally deployed backend
+	REST_API_APP_URL                   : "http://localhost:",
 
 	// Firebase related data
 
