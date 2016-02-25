@@ -148,13 +148,9 @@ c) Using: firebase real storage [https://meds-app-daniel-fryze-firebase-database
 mvn spring-boot:run -Drun.profiles=dev-integration-rws-db
 ```
 
-c) Using: firebase real storage [https://meds-app-daniel-fryze-firebase-database.firebaseio.com] + remote MySQL database deployed to Amazon RDS service:
+d) Using: mocked local firebase storage + local embedded in-memory H2 database:
 ```
-mvn spring-boot:run -Drun.profiles=dev-integration-rws-db
-```
-a) The easiest way (using: firebase real storage [https://meds-app-daniel-fryze-firebase-database.firebaseio.com] + local embedded in-memory H2 database:
-```
-mvn spring-boot:run -Drun.profiles=dev-integration
+mvn spring-boot:run -Drun.profiles=dev-mock
 ```
 
 If everything goes ok, you should see among the logs the following message:
