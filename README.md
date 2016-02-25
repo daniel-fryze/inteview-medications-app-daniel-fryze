@@ -128,7 +128,7 @@ cd meds-app-daniel-fryze-rest-api
 
 3) Build the project code using the command:
 ```
-mvn clean package install
+mvn clean package
 ```
 
 3) Navigate one level lower to the folder named 'rest-api'. Run the application:
