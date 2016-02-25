@@ -32,7 +32,7 @@ I have deployed the sample applications to publicly available servers, so that y
 
 (none of the above apps has any security enabled, so that you don't need any special credentials to log in)
 
-__IMPORTANT NOTE__ Please keep in mind that (what I found during my tests) Heroku servers after some time of inactivity of the application needs some time for starting. That's why it may happen that the first clicks (and requests to Rest API generated) will last for a long time. I experienced it a few times during testing. If necessare please refresh the page a few times and after that it works perfectly fast. On local machines it doesn't happen of course.
+__IMPORTANT NOTE__ Please keep in mind that (what I found during my tests) Heroku servers after some time of inactivity of the application needs some time for starting. That's why it may happen that the first clicks (and requests to Rest API generated) will last for a long time. I experienced it a few times during testing. Maybe it's caused by the limited resources on the free account. If necessare please refresh the page a few times and after that it works perfectly fast. On local machines it doesn't happen of course.
 
 Other URLs which can be useful for testing:
 
