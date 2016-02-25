@@ -67,11 +67,15 @@ In order to run the app locally we need to do the following steps:
 
 Prerequisites:
 
-* All you need is your local machine with any preferable operationg system, connected to the internet, any web browser and Node.js environment installed locally (install guide: https://nodejs.org/en/download/package-manager/).
+* All you need is your local machine with any preferable operationg system, connected to the internet, git installed, any web browser and Node.js environment installed locally (install guide: https://nodejs.org/en/download/package-manager/).
 
 Steps to follow:
 
 1) Clone this Git repository to the local hard drive.
+
+```
+git clone https://github.com/daniel-fryze/inteview-medications-app-daniel-fryze.git
+```
 
 2) Navivate to the folder named 'meds-app-daniel-fryze-web' (the one containing i.e. files: 'package.json' and 'server.js') which resides inside the project parent directory.
 
