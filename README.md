@@ -131,7 +131,12 @@ cd meds-app-daniel-fryze-rest-api
 mvn clean package
 ```
 
-3) Navigate one level lower to the folder named 'rest-api'. Run the application:
+3) Navigate one level lower to the folder named 'rest-api'.
+```
+cd rest-api
+```
+
+4) Run the application:
 
 a) __(SUGGESTER FOR SMOKE TESTING)__ Using: firebase real storage [https://meds-app-daniel-fryze-firebase-database.firebaseio.com] + local embedded in-memory H2 database:
 ```
