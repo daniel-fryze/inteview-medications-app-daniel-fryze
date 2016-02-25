@@ -8,8 +8,8 @@ var angular = require('angular');
 
 // Defining dependencies for Angular application
 const dependencies = [
-  'ngRoute',				        // routing (navigation)
-  'firebase',				        // communication with Firebase
+  'ngRoute',				// routing (navigation)
+  'firebase',				// communication with Firebase
   'restangular',            // handles REST communication
   'ui.bootstrap',           // bootstrap for Angular (no jQuery needed)
   'angularModalService',    // service for modal windows in Angular
