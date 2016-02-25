@@ -150,7 +150,7 @@ mvn spring-boot:run -Drun.profiles=dev-integration
 
 c) Using: firebase real storage [https://meds-app-daniel-fryze-firebase-database.firebaseio.com] + remote MySQL database deployed to Amazon RDS service:
 ```
-mvn spring-boot:run -Drun.profiles=dev-integration-rws-db
+mvn spring-boot:run -Drun.profiles=dev-integration-rds-db
 ```
 
 d) Using: mocked local firebase storage + local embedded in-memory H2 database:
