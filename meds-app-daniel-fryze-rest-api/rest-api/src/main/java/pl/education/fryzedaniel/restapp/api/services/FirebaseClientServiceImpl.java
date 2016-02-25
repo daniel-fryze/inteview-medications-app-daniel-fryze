@@ -17,6 +17,7 @@ import com.firebase.client.Transaction.Result;
 
 import pl.education.fryzedaniel.restapp.api.services.interfaces.IFirebaseClient;
 import pl.education.fryzedaniel.restapp.api.utilities.Constants;
+import pl.education.fryzedaniel.restapp.api.utilities.Utils;
 
 /**
  * The service responsible for communication with <tt>Firebase</tt> service.
@@ -24,7 +25,7 @@ import pl.education.fryzedaniel.restapp.api.utilities.Constants;
  * @author daniel.fryze
  */
 @Service
-@Profile("dev-integration")
+@Profile({"default", "dev-integration", "dev-integration-h2-db"})
 public class FirebaseClientServiceImpl implements IFirebaseClient {
 
 	@Value("${firebase.storage.application.name}")
@@ -97,11 +98,16 @@ public class FirebaseClientServiceImpl implements IFirebaseClient {
 			/** {@inheritDoc} */
 			@Override
 			public Result doTransaction(MutableData dataUnderChange) {
-				if (dataUnderChange.getValue() != null) {
-					dataUnderChange.setValue((Long) dataUnderChange.getValue() + 1);
-				} else {
-					dataUnderChange.setValue(1);
-				}
+
+				String currentYearString = Utils.generateCurrentInYearString();
+
+			    if (dataUnderChange.child("year").getValue() == null || 
+			    		!dataUnderChange.child("year").getValue().equals(currentYearString)) {
+			    	dataUnderChange.child("year").setValue(currentYearString);
+			    	dataUnderChange.child("counter").setValue(1L);
+			    } else {
+			    	dataUnderChange.child("counter").setValue((Long) dataUnderChange.child("counter").getValue() + 1);
+			    }
 				return Transaction.success(dataUnderChange);
 			}
 
@@ -115,14 +121,18 @@ public class FirebaseClientServiceImpl implements IFirebaseClient {
 		firebaseRef.child(Constants.FB_PATH_MEDICATIONS_TODAY_READ_COUNT)
 		.runTransaction(new Transaction.Handler() {
 
+			String currentDayInDate = Utils.generateCurrentDayString();
+
 			/** {@inheritDoc} */
 			@Override
 			public Result doTransaction(MutableData dataUnderChange) {
-				if (dataUnderChange.getValue() != null) {
-					dataUnderChange.setValue((Long) dataUnderChange.getValue() + 1);
-				} else {
-					dataUnderChange.setValue(1);
-				}
+			    if (dataUnderChange.child("day").getValue() == null || 
+			    		!dataUnderChange.child("day").getValue().equals(currentDayInDate)) {
+			    	dataUnderChange.child("day").setValue(currentDayInDate);
+			    	dataUnderChange.child("counter").setValue(1L);
+			    } else {
+			    	dataUnderChange.child("counter").setValue((Long) dataUnderChange.child("counter").getValue() + 1);
+			    }
 				return Transaction.success(dataUnderChange);
 			}
 

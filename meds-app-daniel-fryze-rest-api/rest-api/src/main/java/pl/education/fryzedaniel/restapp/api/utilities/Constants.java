@@ -25,8 +25,8 @@ public interface Constants {
 	String FB_PATH_MEDICATIONS_READ_COUNTER_PREFIX = "medication_reads/counters/";
 	String FB_PATH_MEDICATIONS_READ_DATE_PREFIX = "medication_reads/dates/";
 	String FB_PATH_MEDICATIONS_TOTAL_READ_COUNT = "medication_reads/counters_sums_total/counter";
-	String FB_PATH_MEDICATIONS_YEAR_READ_COUNT = "medication_reads/counters_sums_year/counter";
-	String FB_PATH_MEDICATIONS_TODAY_READ_COUNT = "medication_reads/counters_sums_today/counter";
+	String FB_PATH_MEDICATIONS_YEAR_READ_COUNT = "medication_reads/counters_sums_year";
+	String FB_PATH_MEDICATIONS_TODAY_READ_COUNT = "medication_reads/counters_sums_today";
 	String FB_UPDATE_TIMESTAMP_PROP_REVERSE = "updateDateTimestampReverse";
 	String FB_COUNTER_PROP_REVERSE = "counterReverse";
 	String FB_UPDATE_DATE_PROP = "updateDate";

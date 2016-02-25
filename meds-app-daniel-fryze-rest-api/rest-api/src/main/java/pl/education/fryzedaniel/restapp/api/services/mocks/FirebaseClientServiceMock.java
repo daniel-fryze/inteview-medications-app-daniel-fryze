@@ -8,7 +8,7 @@ import pl.education.fryzedaniel.restapp.api.services.interfaces.IFirebaseClient;
 import pl.education.fryzedaniel.restapp.api.utilities.Constants;
 
 @Service
-@Profile({"dev-mock", "default"})
+@Profile("dev-mock")
 public class FirebaseClientServiceMock implements IFirebaseClient {
 
 	@Autowired
