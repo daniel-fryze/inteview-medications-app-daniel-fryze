@@ -223,18 +223,6 @@ https://scontent-vie1-1.xx.fbcdn.net/hphotos-xaf1/v/t1.0-0/s480x480/1931550_1020
 But of course, not everything always goes wrong. If the operation is successful we alse get the appropriate success message **1**.
 
 
-## A quick look at our storages:
-
-1. Database diagrams:
-
-There's a very simple DB schema - just one table, so there's not a lot to talk about here at the moment :)
-
-2. Firebase storage structure:
-
-Just to have a look:
-
-https://scontent-vie1-1.xx.fbcdn.net/hphotos-xaf1/v/t1.0-0/s480x480/1931550_10208876716860816_1818150426661302298_n.jpg?oh=1ff860c260f72ffff1ab3a68953d5ecb&oe=576268D7https://scontent-vie1-1.xx.fbcdn.net/hphotos-xaf1/v/t1.0-0/s480x480/1931550_10208876716860816_1818150426661302298_n.jpg?oh=1ff860c260f72ffff1ab3a68953d5ecb&oe=576268D7)
-
 ## REST API Overview:
 
 [under construction]
