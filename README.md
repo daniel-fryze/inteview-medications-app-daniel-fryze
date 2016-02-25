@@ -113,9 +113,18 @@ Prerequisites:
 
 Steps to follow:
 
-1) Clone this Git repository to the local hard drive.
+1) Clone this Git repository to the local hard drive (if not already done in previous section).
 
-2) Navivate to the folder named 'meds-app-daniel-fryze-rest-api' (the one containing i.e. file 'pom.xml') which resides inside the project parent directory.
+```
+git clone https://github.com/daniel-fryze/inteview-medications-app-daniel-fryze.git
+```
+
+2) Navivate to the folder named 'meds-app-daniel-fryze-rest-api' (the one containing i.e. file 'pom.xml') which resides inside the project parent directory. Generally something like:
+
+```
+cd inteview-medications-app-daniel-fryze
+cd meds-app-daniel-fryze-rest-api
+```
 
 3) Build the project code using the command:
 ```
@@ -123,6 +132,27 @@ mvn clean package install
 ```
 
 3) Navigate one level lower to the folder named 'rest-api'. Run the application:
+
+a) __(SUGGESTER FOR SMOKE TESTING)__ Using: firebase real storage [https://meds-app-daniel-fryze-firebase-database.firebaseio.com] + local embedded in-memory H2 database:
+```
+mvn spring-boot:run -Drun.profiles=dev-integration-h2-db
+```
+
+b) Using: firebase real storage [https://meds-app-daniel-fryze-firebase-database.firebaseio.com] + local MySQL database (requires running MySQL database server locally):
+```
+mvn spring-boot:run -Drun.profiles=dev-integration
+```
+
+c) Using: firebase real storage [https://meds-app-daniel-fryze-firebase-database.firebaseio.com] + remote MySQL database deployed to Amazon RDS service:
+```
+mvn spring-boot:run -Drun.profiles=dev-integration-rws-db
+```
+
+c) Using: firebase real storage [https://meds-app-daniel-fryze-firebase-database.firebaseio.com] + remote MySQL database deployed to Amazon RDS service:
+```
+mvn spring-boot:run -Drun.profiles=dev-integration-rws-db
+```
+a) The easiest way (using: firebase real storage [https://meds-app-daniel-fryze-firebase-database.firebaseio.com] + local embedded in-memory H2 database:
 ```
 mvn spring-boot:run -Drun.profiles=dev-integration
 ```
