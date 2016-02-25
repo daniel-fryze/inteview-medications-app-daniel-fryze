@@ -26,6 +26,7 @@
     "angular-modal-service": "^0.6.10",
     "angular-route": "^1.4.7",
     "angular-translate": "^2.9.2",
+    "body-parser": "^1.15.0",
     "browserify": "^13.0.0",
     "del": "^2.2.0",
     "es5-shim": "^4.3.1",
